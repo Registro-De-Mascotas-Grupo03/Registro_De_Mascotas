@@ -9,11 +9,27 @@ package Entidades;
  *
  * @author Jean Pierre
  */
-public class Usuario {
+public class Usuario extends Persona{
+
+    private Usuario supervisor;
     private String rol;
     private String correo;
     private String contraseña;
 
+    /**
+     * @return the supervisor
+     */
+    public Usuario getSupervisor() {
+        return supervisor;
+    }
+
+    /**
+     * @param supervisor the supervisor to set
+     */
+    public void setSupervisor(Usuario supervisor) {
+        this.supervisor = supervisor;
+    }
+  
     public String getRol() {
         return rol;
     }

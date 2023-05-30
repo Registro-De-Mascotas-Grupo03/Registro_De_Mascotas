@@ -5,12 +5,13 @@
  */
 package pantallas;
 
+import Entidades.Dueño;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
- * @author brick
+ * @author Fabricio
  */
 public class JFrameReportes extends javax.swing.JFrame {
 

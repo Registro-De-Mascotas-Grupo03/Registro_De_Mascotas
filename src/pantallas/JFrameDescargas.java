@@ -5,22 +5,23 @@
  */
 package pantallas;
 
-import entidades.Dueño;
+import Entidades.Dueño;
 
 /**
  *
- * @author tokiro
+ * @author Alvaro Palacin
  */
 public class JFrameDescargas extends javax.swing.JFrame {
 
     private Dueño dueño;
+    JFrameReportes padre;
     
     /**
      * Creates new form Reque13
      */
     public JFrameDescargas(JFrameReportes padre) {
         initComponents();
-        this.padre = padre
+        this.padre = padre;
     }
 
     /**
@@ -129,7 +130,7 @@ public class JFrameDescargas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDescargarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        Salir
+        salir();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void salir() {
@@ -168,7 +169,7 @@ public class JFrameDescargas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameDescargas().setVisible(true);
+                new JFrameDescargas(new JFrameReportes()).setVisible(true);
             }
         });
     }

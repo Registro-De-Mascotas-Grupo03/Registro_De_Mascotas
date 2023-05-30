@@ -5,9 +5,11 @@
  */
 package pantallas;
 
+import Entidades.Usuario;
+
 /**
  *
- * @author brick
+ * @author Fabricio
  */
 public class JFrameRegistroUsuario extends javax.swing.JFrame {
 

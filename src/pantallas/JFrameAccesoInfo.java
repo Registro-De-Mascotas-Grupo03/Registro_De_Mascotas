@@ -5,9 +5,11 @@
  */
 package pantallas;
 
+import Entidades.Usuario;
+
 /**
  *
- * @author brick
+ * @author Fabricio
  */
 public class JFrameAccesoInfo extends javax.swing.JFrame {
 

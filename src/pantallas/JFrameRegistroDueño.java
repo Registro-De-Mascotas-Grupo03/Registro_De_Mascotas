@@ -7,7 +7,7 @@ package pantallas;
 
 /**
  *
- * @author MIKI
+ * @author Miguel Picon
  */
 public class JFrameRegistroDueño extends javax.swing.JFrame {
 

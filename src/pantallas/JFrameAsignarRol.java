@@ -5,20 +5,23 @@
  */
 package pantallas;
 
-import entidades.Usuario;
+import Entidades.Usuario;
+
+
 
 /**
  *
- * @author tokiro
+ * @author Alvaro Palacin
  */
 public class JFrameAsignarRol extends javax.swing.JFrame {
 
     private Usuario usuario;
+    JFrameRegistroUsuario padre;
     
     /**
      * Creates new form Reque6
      */
-    public JFrameAsignarRol(JFrameUsuario padre) {
+    public JFrameAsignarRol(JFrameRegistroUsuario padre) {
         initComponents();
         this.padre = padre;
     }
@@ -222,7 +225,7 @@ public class JFrameAsignarRol extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameAsignarRol().setVisible(true);
+                new JFrameAsignarRol(new JFrameRegistroUsuario()).setVisible(true);
             }
         });
     }

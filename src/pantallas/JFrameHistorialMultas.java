@@ -6,6 +6,7 @@
 package pantallas;
 
 
+import Entidades.Dueño;
 import java.util.ArrayList;
 import java.util.List;
 import Entidades.Multa;

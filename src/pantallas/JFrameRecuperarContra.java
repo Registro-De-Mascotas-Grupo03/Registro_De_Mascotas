@@ -5,23 +5,24 @@
  */
 package pantallas;
 
-import entidades.Usuario;
+import Entidades.Usuario;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author tokiro
+ * @author Alvaro Palacin
  */
 public class JFrameRecuperarContra extends javax.swing.JFrame {
 
     private Usuario usuario;
     
+    
     /**
      * Creates new form Reque6
      */
-    public JFrameRecuperarContra(JFrameLogin padre) {
+    public JFrameRecuperarContra() {
         initComponents();
-        this.padre = padre;
+        
     }
 
     /**
@@ -141,7 +142,7 @@ public class JFrameRecuperarContra extends javax.swing.JFrame {
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
         
-        usuario = new Usuario();
+        //usuario = new Usuario();
         if (usuario.getCorreo().toLowerCase()
                     .contains(txtCorreo.getText().toLowerCase())){
         JOptionPane.showMessageDialog(this,"¡ Código enviado !");        
@@ -153,7 +154,7 @@ public class JFrameRecuperarContra extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void salir() {
-        padre.setVisible(true);
+        //padre.setVisible(true);
         this.dispose();
     }
     

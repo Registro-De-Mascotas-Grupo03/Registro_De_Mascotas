@@ -7,7 +7,7 @@ package pantallas;
 
 /**
  *
- * @author MIKI
+ * @author Miguel Picon
  */
 public class JFrameRegistroMascota extends javax.swing.JFrame {
 
