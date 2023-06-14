@@ -9,15 +9,15 @@ package pantallas;
  *
  * @author tokiro
  */
-public class JFrameReportes extends javax.swing.JFrame {
+public class JFrameListaUsuarios extends javax.swing.JFrame {
 
     private JFrameGestorUsuario padre;
     
-    public JFrameReportes() {
+    public JFrameListaUsuarios() {
         initComponents();
     }
 
-    public JFrameReportes(JFrameGestorUsuario padre) {
+    public JFrameListaUsuarios(JFrameGestorUsuario padre) {
         initComponents();
         this.padre = padre;
     }
@@ -27,21 +27,29 @@ public class JFrameReportes extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        btnBuscar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btnAgregar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        btnDescargar = new javax.swing.JButton();
-        btnFiltrar = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        cbFiltro = new javax.swing.JComboBox<>();
-        txtFiltro = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBuscar.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.setBorder(null);
+        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 100, 35));
+
+        txtBuscar.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        txtBuscar.setBorder(null);
+        jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 210, 35));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -71,7 +79,24 @@ public class JFrameReportes extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 610, 330));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 610, 330));
+
+        btnAgregar.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        btnAgregar.setText("Agregar Usuarios");
+        btnAgregar.setBorder(null);
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, 150, 35));
+
+        btnEliminar.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setBorder(null);
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, 100, 35));
 
         btnSalir.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         btnSalir.setText("Salir");
@@ -82,46 +107,13 @@ public class JFrameReportes extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 90, 33));
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 510, 100, 35));
 
-        btnDescargar.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
-        btnDescargar.setText("Descargar Reporte");
-        btnDescargar.setBorder(null);
-        btnDescargar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDescargar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDescargarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnDescargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 160, 33));
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
+        jLabel2.setText("Usuarios");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
-        btnFiltrar.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
-        btnFiltrar.setText("Filtrar");
-        btnFiltrar.setBorder(null);
-        btnFiltrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btnFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, 90, 33));
-
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
-        jLabel4.setText("Reportes");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
-        jLabel2.setText("Filtro:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
-        jLabel3.setText("Filtrar por:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
-
-        cbFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbFiltro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(cbFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 93, 160, 30));
-
-        txtFiltro.setBorder(null);
-        txtFiltro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(txtFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 160, 33));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/patitas9 listaMascotas.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/patitas7 listaDueños.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -138,16 +130,16 @@ public class JFrameReportes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        JFrameRegistroUsuario reg = new JFrameRegistroUsuario(this);
+        reg.setLocationRelativeTo(null);
+        reg.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         salir();
     }//GEN-LAST:event_btnSalirActionPerformed
-
-    private void btnDescargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDescargarActionPerformed
-        JFrameDescargas descargar = new JFrameDescargas(this);
-        descargar.setLocationRelativeTo(null);
-        descargar.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnDescargarActionPerformed
 
     private void salir() {
         padre.setVisible(true);
@@ -171,36 +163,34 @@ public class JFrameReportes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameReportes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameListaUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameReportes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameListaUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameReportes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameListaUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameReportes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameListaUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameReportes().setVisible(true);
+                new JFrameListaUsuarios().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDescargar;
-    private javax.swing.JButton btnFiltrar;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<String> cbFiltro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtFiltro;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
